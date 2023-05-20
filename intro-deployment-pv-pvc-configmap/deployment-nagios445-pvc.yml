@@ -20,7 +20,7 @@ spec:
     spec:
       #--- Container
       containers:
-      - image: phx.ocir.io/linuxandvirtualization/labops/ol7nagios:445
+      - image: phx.ocir.io/tenancy/compartment/ol7nagios:445
         name: ol7nagios-image
         resources:
           requests:  # what's reserved for a pod

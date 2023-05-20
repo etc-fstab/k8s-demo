@@ -15,7 +15,7 @@ spec:
     spec:
       initContainers:
       - name: init-mysql
-        image: phx.ocir.io/linuxandvirtualization/labops/mysql:5.7.31
+        image: phx.ocir.io/tenancy/compartment/mysql:5.7.31
         command:
         - bash
         - "-c"
@@ -39,7 +39,7 @@ spec:
         - name: config-map
           mountPath: /mnt/config-map
       - name: clone-mysql
-        image: phx.ocir.io/linuxandvirtualization/labops/xtrabackup:1.0
+        image: phx.ocir.io/tenancy/compartment/xtrabackup:1.0
         command:
         - bash
         - "-c"
@@ -66,7 +66,7 @@ spec:
           mountPath: /etc/mysql/conf.d
       containers:
       - name: mysql  # primary container
-        image: phx.ocir.io/linuxandvirtualization/labops/mysql:5.7.31
+        image: phx.ocir.io/tenancy/compartment/mysql:5.7.31
         env:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "1"   # true
@@ -101,7 +101,7 @@ spec:
           periodSeconds: 2
           timeoutSeconds: 1
       - name: xtrabackup  # sidecar container
-        image: phx.ocir.io/linuxandvirtualization/labops/xtrabackup:1.0
+        image: phx.ocir.io/tenancy/compartment/xtrabackup:1.0
         ports:
         - name: xtrabackup
           containerPort: 3307

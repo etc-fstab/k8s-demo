@@ -2,7 +2,7 @@ In this demo, application is independent pod, running mysql client:
 
 - Start new pod, named mysqlclient, interactivly.
 
- $ kubectl run mysqlclient -it --rm --image=phx.ocir.io/linuxandvirtualization/labops/mysql:5.7  -- bash
+ $ kubectl run mysqlclient -it --rm --image=phx.ocir.io/tenancy/compartment/mysql:5.7  -- bash
 
 - Install some utils, like ping/host, we need web proxy ...
  

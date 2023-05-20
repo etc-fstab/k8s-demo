@@ -37,14 +37,14 @@ Note: this is example of deployment with pvc, so have pv/pvc created in advance 
   syntax: kubectl set image <deployment-name> <image-name>=image:tag --record
 
   example:
-  $ kubectl set image deployment.apps/ol7nagios-deployment ol7nagios-image=phx.ocir.io/linuxandvirtualization/labops/ol7nagios:446 --record
+  $ kubectl set image deployment.apps/ol7nagios-deployment ol7nagios-image=phx.ocir.io/tenancy/compartment/ol7nagios:446 --record
  
 - Now your pods are replaced one by one. To see rollout history: 
 
  $ kubectl rollout history  deployment.apps/ol7nagios-deployment
  REVISION  CHANGE-CAUSE
  1         kubectl create --filename=deployment-nagios-pvc.yml --record=true
- 2         kubectl set image deployment.apps/ol7nagios-deployment ol7nagios-image=phx.ocir.io/linuxandvirtualization/labops/ol7nagios:446 --record=true
+ 2         kubectl set image deployment.apps/ol7nagios-deployment ol7nagios-image=phx.ocir.io/tenancy/compartment/ol7nagios:446 --record=true
 
 
 - In casse of problem with Nagios 446, rollout can be undone. 
@@ -56,7 +56,7 @@ Note: this is example of deployment with pvc, so have pv/pvc created in advance 
  $ kubectl rollout history   deployment.apps/ol7nagios-deployment
  deployment.apps/ol7nagios-deployment
  REVISION  CHANGE-CAUSE
- 2         kubectl set image deployment.apps/ol7nagios-deployment ol7nagios-image=phx.ocir.io/linuxandvirtualization/labops/ol7nagios:446 --record=true
+ 2         kubectl set image deployment.apps/ol7nagios-deployment ol7nagios-image=phx.ocir.io/tenancy/compartment/ol7nagios:446 --record=true
  3         kubectl create --filename=deployment-nagios-pvc.yml --record=true
 
 - Deployment has 2 ReplicaSets, one is empty, another run pods. 

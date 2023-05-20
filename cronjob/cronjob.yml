@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: bugzilla-backup
-            image: phx.ocir.io/linuxandvirtualization/labops/bugzilla-stage-bk:demo
+            image: phx.ocir.io/tenancy/compartment/bugzilla-stage-bk:demo
           restartPolicy: OnFailure
